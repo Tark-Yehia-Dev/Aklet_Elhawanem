@@ -10,8 +10,8 @@
         }
         body {
             font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* خلفية صورة فخمة متدرجة تملى الشاشة وتفتح النفس */
-            background: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.88)), 
+            /* خلفية صورة فخمة متدرجة تملى الشاشة بالكامل وداكنة قليلاً لإبراز المحتوى */
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.78)), 
                         url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
             margin: 0;
@@ -24,28 +24,29 @@
         }
         .wrapper {
             width: 100%;
-            max-width: 480px;
+            max-width: 460px;
             animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* كارت شفاف بالكامل بحيث تظهر الخلفية الصورة وراه وتندمج مع الزراير */
         .card {
-            background: rgba(15, 23, 42, 0.82);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 30px 20px;
-            border-radius: 28px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px 22px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             text-align: center;
             width: 100%;
         }
         .brand-badge {
             display: inline-block;
-            background: rgba(234, 88, 12, 0.2);
-            color: #fb923c;
+            background: rgba(234, 88, 12, 0.25);
+            color: #ff9f43;
             font-size: 13px;
             font-weight: 700;
             padding: 6px 16px;
@@ -56,13 +57,13 @@
         .logo-container {
             width: 85px;
             height: 85px;
-            background: linear-gradient(135deg, #f97316, #c2410c);
-            border-radius: 22px;
+            background: linear-gradient(135deg, #ff7675, #d63031);
+            border-radius: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 16px;
-            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+            box-shadow: 0 10px 25px rgba(214, 48, 49, 0.4);
             font-size: 40px;
         }
         h1 {
@@ -73,8 +74,8 @@
             letter-spacing: -0.5px;
         }
         p {
-            color: #94a3b8;
-            margin: 0 auto 22px auto;
+            color: #e2e8f0;
+            margin: 0 auto 24px auto;
             font-size: 14px;
             line-height: 1.6;
             max-width: 100%;
@@ -82,7 +83,7 @@
         .actions {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             width: 100%;
         }
         .btn {
@@ -90,27 +91,27 @@
             align-items: center;
             justify-content: space-between;
             padding: 16px 20px;
-            border-radius: 14px;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.12);
             cursor: pointer;
             width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
         .btn-content {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             width: 100%;
         }
         .btn-icon {
             font-size: 22px;
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -120,37 +121,35 @@
             text-align: right;
             flex-grow: 1;
         }
+        /* زر الأندرويد مندمج مع الخلفية بصفتها حزمة واحدة شيك جداً */
         .btn-android {
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.85), rgba(5, 150, 105, 0.9));
             color: #ffffff;
-            border-color: rgba(16, 185, 129, 0.4);
-            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.25);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
         }
         .btn-android:hover {
-            background: linear-gradient(135deg, #059669, #047857);
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.95), rgba(4, 120, 87, 1));
             transform: translateY(-2px);
         }
         .btn-ios {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.85), rgba(37, 99, 235, 0.9));
             color: #ffffff;
-            border-color: rgba(59, 130, 246, 0.4);
-            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.25);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
         }
         .btn-ios:hover {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(29, 78, 216, 1));
             transform: translateY(-2px);
         }
         .btn-reviews {
-            background: rgba(255, 255, 255, 0.08);
-            color: #f1f5f9;
-            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
         }
         .btn-reviews:hover {
-            background: rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
         .arrow {
-            opacity: 0.7;
+            opacity: 0.8;
             font-size: 16px;
             transition: transform 0.3s;
         }
@@ -158,35 +157,35 @@
             transform: rotate(90deg);
         }
         
-        /* قسم آراء العملاء المتكامل داخل الصفحة */
+        /* قسم آراء العملاء المنسدل بسلاسة */
         .reviews-section {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.3s ease;
             text-align: right;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(15, 23, 42, 0.6);
             border-radius: 14px;
-            margin-top: 0;
-            padding: 0 10px;
+            padding: 0 12px;
+            border: 0px solid rgba(255, 255, 255, 0.1);
         }
         .reviews-section.show {
             max-height: 500px;
-            padding: 15px 10px;
+            padding: 15px 12px;
             margin-top: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
         .reviews-title {
             font-size: 14px;
             font-weight: 700;
-            color: #fb923c;
-            margin-bottom: 10px;
+            color: #ff9f43;
+            margin-bottom: 12px;
             text-align: center;
         }
         .review-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             padding: 10px 12px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 8px;
             text-align: right;
         }
@@ -198,12 +197,12 @@
         }
         .reviewer-name {
             font-weight: 700;
-            font-size: 12px;
-            color: #f1f5f9;
+            font-size: 13px;
+            color: #ffffff;
         }
         .stars {
-            color: #f59e0b;
-            font-size: 11px;
+            color: #f1c40f;
+            font-size: 12px;
         }
         .review-text {
             font-size: 12px;
@@ -215,26 +214,26 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 22px;
+            gap: 10px;
+            margin-top: 24px;
             padding-top: 18px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
         }
         .feature-item div:first-child {
             font-size: 15px;
             font-weight: 700;
-            color: #f1f5f9;
+            color: #ffffff;
         }
         .feature-item div:last-child {
-            font-size: 11px;
-            color: #94a3b8;
+            font-size: 12px;
+            color: #cbd5e1;
             margin-top: 2px;
         }
         .footer {
             margin-top: 20px;
             font-size: 12px;
-            color: #94a3b8;
+            color: #cbd5e1;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -253,13 +252,12 @@
             <p>أكل بيتي على الفرازة، طزاجة ونظافة تخليك تحس إن الاكل متصنع بحب في بيتك. حمّل التطبيق أو اطلب فوري!</p>
             
             <div class="actions">
-                <!-- زر تحميل أندرويد -->
+                <!-- زر تحميل أندرويد (رابط مباشر بدون لغو ولا أرقام إصدار تضايق العميل) -->
                 <a id="androidDownloadBtn" href="#" class="btn btn-android">
                     <div class="btn-content">
                         <div class="btn-icon">📱</div>
                         <div class="btn-text-wrap">
-                            <div style="font-size: 15px; font-weight: 800;">تحميل تطبيق أندرويد</div>
-                            <div style="font-size: 11px; opacity: 0.85; font-weight: 400;" id="versionText">جاري فحص الإصدار...</div>
+                            <div style="font-size: 16px; font-weight: 800;">تحميل تطبيق أندرويد</div>
                         </div>
                     </div>
                     <div class="arrow">←</div>
@@ -270,26 +268,25 @@
                     <div class="btn-content">
                         <div class="btn-icon">🍏</div>
                         <div class="btn-text-wrap">
-                            <div style="font-size: 15px; font-weight: 800;">تشغيل نسخة الآيفون</div>
-                            <div style="font-size: 11px; opacity: 0.85; font-weight: 400;">يعمل مباشرة من المتصفح (PWA)</div>
+                            <div style="font-size: 16px; font-weight: 800;">تشغيل نسخة الآيفون</div>
                         </div>
                     </div>
                     <div class="arrow">←</div>
                 </a>
 
-                <!-- زرار آراء العملاء -->
+                <!-- زرار آراء العملاء (يفتح ويقفل بسلاسة تامة) -->
                 <button type="button" id="reviewsBtn" class="btn btn-reviews">
                     <div class="btn-content">
                         <div class="btn-icon">💬</div>
                         <div class="btn-text-wrap">
-                            <div style="font-size: 15px; font-weight: 800;">آراء العملاء</div>
+                            <div style="font-size: 16px; font-weight: 800;">آراء العملاء</div>
                         </div>
                     </div>
                     <div class="arrow">←</div>
                 </button>
             </div>
 
-            <!-- قسم آراء العملاء المنسدل بسلاسة -->
+            <!-- قسم آراء العملاء المنسدل -->
             <div id="reviewsSection" class="reviews-section">
                 <div class="reviews-title">⭐ آراء عملائنا الكرام وتجربتهم معنا ⭐</div>
                 
@@ -340,7 +337,7 @@
     </div>
 
     <script>
-        // فتح وإغلاق سلس لقسم آراء العملاء في نفس الصفحة من غير مغادرة أو تجميد
+        // فتح وإغلاق سلس لقسم آراء العملاء بزرار واحد (دوسة يفتح، ودوسة يقفل)
         const reviewsBtn = document.getElementById('reviewsBtn');
         const reviewsSection = document.getElementById('reviewsSection');
 
@@ -349,7 +346,7 @@
             reviewsBtn.classList.toggle('active');
         });
 
-        // جلب أحدث إصدار وتكوين رابط التحميل المباشر للـ APK بالـ tag المتغير تلقائياً
+        // سكريبت لجلب أحدث إصدار وتجهيز رابط التحميل المباشر للـ APK في الخلفية بدون إزعاج للعميل
         async function fetchLatestRelease() {
             const repoOwner = "Tark-Yehia-Dev";
             const repoName = "Aklet_Elhawanem";
@@ -362,14 +359,11 @@
                 const tagName = data.tag_name; 
                 
                 const apkDirectUrl = `https://github.com/${repoOwner}/${repoName}/releases/download/${tagName}/Aklet_Elhawanem.apk`;
-                
-                const btn = document.getElementById('androidDownloadBtn');
-                btn.href = apkDirectUrl;
-                document.getElementById('versionText').innerText = `إصدار رقم (${tagName}) - تحميل مباشر`;
+                document.getElementById('androidDownloadBtn').href = apkDirectUrl;
             } catch (error) {
+                // رابط احتياطي مباشر لو الـ API اتأخر
                 const fallbackUrl = `https://github.com/Tark-Yehia-Dev/Aklet_Elhawanem/releases/download/2/Aklet_Elhawanem.apk`;
                 document.getElementById('androidDownloadBtn').href = fallbackUrl;
-                document.getElementById('versionText').innerText = "تحميل أحدث إصدار APK مباشر";
             }
         }
 
