@@ -124,25 +124,22 @@
             color: #ffffff;
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
         }
-        .btn-android:hover {
-            transform: translateY(-2px);
-        }
+        .btn-android:hover { transform: translateY(-2px); }
+        
         .btn-ios {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.95));
             color: #ffffff;
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
         }
-        .btn-ios:hover {
-            transform: translateY(-2px);
-        }
+        .btn-ios:hover { transform: translateY(-2px); }
+        
         .btn-guide {
             background: linear-gradient(135deg, rgba(168, 85, 247, 0.9), rgba(126, 34, 206, 0.95));
             color: #ffffff;
             box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
         }
-        .btn-guide:hover {
-            transform: translateY(-2px);
-        }
+        .btn-guide:hover { transform: translateY(-2px); }
+        
         .btn-reviews {
             background: rgba(255, 255, 255, 0.18);
             color: #ffffff;
@@ -160,7 +157,6 @@
             transform: rotate(90deg);
         }
         
-        /* الأقسام المنسدلة (آراء العملاء وطريقة التثبيت) */
         .expandable-section {
             max-height: 0;
             overflow: hidden;
@@ -171,15 +167,13 @@
             padding: 0 10px;
         }
         .expandable-section.show {
-            max-height: 420px;
+            max-height: 450px;
             overflow-y: auto;
             padding: 15px 10px;
             margin-top: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .expandable-section::-webkit-scrollbar {
-            width: 5px;
-        }
+        .expandable-section::-webkit-scrollbar { width: 5px; }
         .expandable-section::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.3);
             border-radius: 10px;
@@ -191,6 +185,39 @@
             margin-bottom: 12px;
             text-align: center;
         }
+        
+        /* تنسيق خطوات التثبيت البصرية (كروت صغيرة منسقة كأنها صور توضيحية) */
+        .visual-step {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 10px 12px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: right;
+        }
+        .step-icon {
+            font-size: 20px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-text {
+            font-size: 12px;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+        .step-text b {
+            color: #ffffff;
+        }
+
         .review-card {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -219,18 +246,6 @@
             color: #cbd5e1;
             line-height: 1.4;
             margin: 0;
-        }
-
-        /* تنسيق خطوات دليل تثبيت الآيفون */
-        .guide-steps {
-            font-size: 13px;
-            color: #e2e8f0;
-            line-height: 1.6;
-            margin: 0;
-            padding-right: 15px;
-        }
-        .guide-steps li {
-            margin-bottom: 8px;
         }
 
         .features-grid {
@@ -264,7 +279,6 @@
 
     <div class="wrapper">
         <div class="card">
-            <!-- الشعار المحدث باسم المطعم صريح -->
             <div class="brand-badge">⚡ التطبيق الرسمي لأكلت الهوانم ⚡</div>
             
             <div class="logo-container">
@@ -275,7 +289,6 @@
             <p>أكل بيتي على الفرازة، طزاجة ونظافة تخليك تحس إن الاكل متصنع بحب في بيتك. حمّل التطبيق أو اطلب فوري!</p>
             
             <div class="actions">
-                <!-- زر تحميل أندرويد -->
                 <a id="androidDownloadBtn" href="#" class="btn btn-android">
                     <div class="btn-content">
                         <div class="btn-icon">📱</div>
@@ -286,7 +299,6 @@
                     <div class="arrow">←</div>
                 </a>
                 
-                <!-- زر تشغيل الآيفون -->
                 <a href="https://aklet-c0642.web.app/" class="btn btn-ios" target="_blank">
                     <div class="btn-content">
                         <div class="btn-icon">🍏</div>
@@ -297,7 +309,7 @@
                     <div class="arrow">←</div>
                 </a>
 
-                <!-- زر شرح تثبيت الآيفون على الشاشة الرئيسية -->
+                <!-- زرار الشرح البصري للآيفون -->
                 <button type="button" id="guideBtn" class="btn btn-guide">
                     <div class="btn-content">
                         <div class="btn-icon">💡</div>
@@ -308,7 +320,6 @@
                     <div class="arrow">←</div>
                 </button>
 
-                <!-- زرار آراء العملاء -->
                 <button type="button" id="reviewsBtn" class="btn btn-reviews">
                     <div class="btn-content">
                         <div class="btn-icon">💬</div>
@@ -320,18 +331,32 @@
                 </button>
             </div>
 
-            <!-- قسم شرح تثبيت الآيفون المنسدل -->
+            <!-- دليل الشرح البصري بالخطوات المصورة -->
             <div id="guideSection" class="expandable-section">
                 <div class="section-title">🍏 خطوات تثبيت التطبيق على الآيفون 🍏</div>
-                <ol class="guide-steps">
-                    <li>افتح رابط نسخة الآيفون من متصفح <b>سفاري (Safari)</b>.</li>
-                    <li>اضغط على زر <b>المشاركة (Share)</b> الموجود في شريط المتصفح تحت.</li>
-                    <li>اسحب القائمة لأسفل واختر <b>"إضافة إلى الشاشة الرئيسية" (Add to Home Screen)</b>.</li>
-                    <li>اضغط على <b>"إضافة" (Add)</b> في الفوق، ومبروك عليك التطبيق كأنه برنامج حقيقي على شاشتك!</li>
-                </ol>
+                
+                <div class="visual-step">
+                    <div class="step-icon">🧭</div>
+                    <div class="step-text">افتح رابط نسخة الآيفون من متصفح <b>سفاري (Safari)</b> الأساسي.</div>
+                </div>
+                
+                <div class="visual-step">
+                    <div class="step-icon">⎋</div>
+                    <div class="step-text">اضغط على زر <b>المشاركة (Share)</b> الموجود أسفل الشاشة.</div>
+                </div>
+
+                <div class="visual-step">
+                    <div class="step-icon">➕</div>
+                    <div class="step-text">اختر من القائمة <b>"إضافة إلى الشاشة الرئيسية" (Add to Home Screen)</b>.</div>
+                </div>
+
+                <div class="visual-step">
+                    <div class="step-icon">⭐</div>
+                    <div class="step-text">اضغط <b>"إضافة"</b> فوق، ومبروك عليك التطبيق شغال كأنه برنامج حقيقي!</div>
+                </div>
             </div>
 
-            <!-- قسم آراء العملاء الطبيعية -->
+            <!-- آراء العملاء -->
             <div id="reviewsSection" class="expandable-section">
                 <div class="section-title">⭐ آراء عملائنا الكرام ⭐</div>
                 
@@ -411,7 +436,6 @@
             toggleSection(guideSection, guideBtn, 'guideOpen');
         });
 
-        // زر الرجوع في الهاتف يقفل أي قائمة مفتوحة بسلاسة
         window.addEventListener('popstate', function(event) {
             closeAll();
         });
